@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './Bucket.css';
 
 const Bucket = ({ current, capacity }) => {
   return (
-    <progress value={current} max={capacity}></progress>
+    <progress className={styles.Bucket} value="5" max="10"></progress>
   );
 };
 

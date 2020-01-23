@@ -1,4 +1,4 @@
-import React, { useReducer, useEffect } from 'react';
+import React, { useReducer } from 'react';
 import Buckets from '../components/buckets/Buckets';
 import TransferForm from '../components/buckets/TransferForm';
 
@@ -30,7 +30,7 @@ const Challenge = () => {
     console.log('fill');
   };
 
-  const handleEmpty = () => {
+  const handleEmpty = ({ target }) => {
     console.log('empty');
   };
 

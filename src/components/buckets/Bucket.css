@@ -1,0 +1,25 @@
+.Bucket[value] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: relative;
+  border: none;
+  height: 200px;
+  width: 30%;
+  transform: rotate(-90deg);
+  background-color: whiteSmoke;
+  color: royalblue;
+  border-radius: 3px;
+	box-shadow: 0 2px 3px rgba(0,0,0,.5) inset;
+}
+
+.Bucket[value]::-webkit-progress-value {
+  background-color: royalblue;
+}
+
+.Bucket[value]::-webkit-progress-bar {
+  background-color: whiteSmoke;
+  color: royalblue;
+	border-radius: 3px;
+	box-shadow: 0 2px 3px rgba(0,0,0,.5) inset;
+}
