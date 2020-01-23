@@ -16,13 +16,27 @@ function reducer(state, action) {
 }
 
 const Challenge = () => {
+  const [buckets, dispatchBuckets] = useReducer(reducer, [
+    { capacity: 3, current:0 },
+    { capacity: 4, current:0 },
+    { capacity: 5, current:0 }
+  ]);
+
   const handleSubmit = event => {
     event.preventDefault();
   };
 
+  const handleFill = () => {
+    console.log('fill');
+  };
+
+  const handleEmpty = () => {
+    console.log('empty');
+  };
+
   return (
     <>
-      <Buckets />
+      <Buckets buckets={buckets} handleFill={handleFill} handleEmpty={handleEmpty} />
       <TransferForm handleSubmit={handleSubmit} />
     </>
   );
