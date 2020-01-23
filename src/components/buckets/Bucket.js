@@ -8,8 +8,8 @@ const Bucket = ({ current, capacity }) => {
 };
 
 Bucket.propTypes = {
-  current: PropTypes.number.isRequired,
-  capacity: PropTypes.number.isRequired
+  current: PropTypes.number,
+  capacity: PropTypes.number
 };
 
 export default Bucket;

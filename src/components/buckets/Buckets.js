@@ -38,11 +38,11 @@ const Buckets = ({ buckets, handleFill, handleEmpty }) => {
 
 Buckets.propTypes = {
   buckets: PropTypes.arrayOf(PropTypes.shape({
-    capacity: PropTypes.number.isRequired,
-    current: PropTypes.number.isRequired
-  })).isRequired,
-  handleFill: PropTypes.func.isRequired,
-  handleEmpty: PropTypes.func.isRequired
+    capacity: PropTypes.number,
+    current: PropTypes.number
+  })),
+  handleFill: PropTypes.func,
+  handleEmpty: PropTypes.func
 };
 
 export default Buckets;
