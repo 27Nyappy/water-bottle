@@ -24,12 +24,6 @@ const Buckets = ({ buckets, handleFill, handleEmpty }) => {
             capacity={bucket.capacity}
           />
           <button onClick={handleFill}>Fill</button>
-          <p>Transfer water to</p>
-          {bucket.capacity === 3 ? <><input type="radio" name="transfer" id="three-gallon" value={bucket.capacity} />
-            <label>3 Gallon Bucket</label></> : <><input type="radio" name="transfer" id="five-gallon" value={bucket.capacity} />
-            <label>5 Gallon Bucket</label></>}
-          <input type="radio" name="transfer" id="four-gallon" value={4} />
-          <label htmlFor="four-gallon">4 Gallon Bucket</label>
           <button onClick={handleEmpty}>Empty</button>
         </li>
       );
