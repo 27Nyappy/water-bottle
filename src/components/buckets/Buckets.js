@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Bucket from './Bucket';
+import styles from './Buckets.css';
 
 const Buckets = ({ buckets, handleFill, handleEmpty }) => {
   const bucketElements = buckets.map(bucket => {
@@ -30,7 +31,7 @@ const Buckets = ({ buckets, handleFill, handleEmpty }) => {
     }
   });
   return (
-    <ul>
+    <ul className={styles.Buckets}>
       {bucketElements}
     </ul>
   );

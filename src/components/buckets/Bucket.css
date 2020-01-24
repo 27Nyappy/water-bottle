@@ -2,24 +2,25 @@
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  position: relative;
   border: none;
-  height: 200px;
-  width: 30%;
+  height: 250px;
+  width: 200px;
   transform: rotate(-90deg);
+  transition: 1s all linear;
   background-color: whiteSmoke;
-  color: royalblue;
+  color: rgba(5, 54, 201, 0.591);
   border-radius: 3px;
 	box-shadow: 0 2px 3px rgba(0,0,0,.5) inset;
 }
 
 .Bucket[value]::-webkit-progress-value {
-  background-color: royalblue;
+  background-color: rgba(5, 54, 201, 0.591);
+  transition: 1s all linear;
 }
 
 .Bucket[value]::-webkit-progress-bar {
   background-color: whiteSmoke;
   color: royalblue;
 	border-radius: 3px;
-	box-shadow: 0 2px 3px rgba(0,0,0,.5) inset;
+	box-shadow: 0 0 3px rgba(0,0,0,.5);
 }

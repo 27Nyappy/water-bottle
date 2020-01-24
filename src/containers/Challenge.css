@@ -1,0 +1,15 @@
+.Challenge {
+  text-align: center;
+  margin: 5% 3%;
+
+  h2 {
+    font-size: 15pt;
+  }
+
+  p {
+    margin: 2% auto;
+    width: 60%;
+    text-align: justify;
+    line-height: 1.4;
+  }
+}
