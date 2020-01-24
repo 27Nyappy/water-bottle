@@ -4,7 +4,7 @@ import styles from './Bucket.css';
 
 const Bucket = ({ current, capacity }) => {
   return (
-    <progress className={styles.Bucket} value="5" max="10"></progress>
+    <progress className={styles.Bucket} value={current} max={capacity}></progress>
   );
 };
 

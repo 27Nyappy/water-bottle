@@ -23,8 +23,8 @@ const Buckets = ({ buckets, handleFill, handleEmpty }) => {
             current={bucket.current}
             capacity={bucket.capacity}
           />
-          <button onClick={handleFill}>Fill</button>
-          <button onClick={handleEmpty}>Empty</button>
+          <button name={bucket.capacity} onClick={handleFill}>Fill</button>
+          <button name={bucket.capacity} onClick={handleEmpty}>Empty</button>
         </li>
       );
     }
