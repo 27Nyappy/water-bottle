@@ -1,0 +1,50 @@
+.Transfer {
+  text-align: center;
+  margin: 0 auto;
+
+  span {
+    display: flex;
+    flex-direction: column;
+    border-bottom: medium double #3B413C;
+    margin: 0 0 0.5% 0;
+    font-weight: bold;
+  }
+
+  input {
+    display: none;
+  }
+
+  label {
+    margin: 1% 4%;
+    font-size: 11pt;
+  }
+
+  label:hover {
+    cursor: pointer;
+  }
+
+  input:checked + label {
+    color: #94D1BE
+  }
+
+  button {
+    display: block;
+    height: 35px;
+    margin: 0.5% auto 0 auto;
+    font-size: 11pt;
+    transition: 0.1s ease-in-out;
+    background-color: #9DB5B2;
+    color: #FFFFFF;
+    border-radius: 2px;
+  }
+
+  button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 5px #94D1BE;
+    border: none;
+    background-color: #3B413C;
+    color: #FFFFFF;
+    cursor: pointer;
+  }
+
+}

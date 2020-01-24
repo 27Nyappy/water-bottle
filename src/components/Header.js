@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import styles from './Header.css';
 
 const Header = () => (
-  <header>
+  <header className={styles.Header}>
     <h1>Water Bucket Challenge</h1>
     <nav>
       <Link to="/">Challenge</Link>

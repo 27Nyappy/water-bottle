@@ -1,10 +1,10 @@
-
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './TransferForm.css';
 
 const TransferForm = ({ handleSubmit }) => {
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={styles.Transfer}>
       <span>Transfer from</span>
       <input type="radio" name="transfer-from" value="3" id="from-3" />
       <label htmlFor="from-3">3 Gallon Bucket</label>
