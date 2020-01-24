@@ -61,6 +61,8 @@ const Challenge = () => {
 
   return (
     <>
+      <h2>Instructions</h2>
+      <p>You have three buckets. A 3 gallon bucket, a 5 gallon bucket and a 4 gallon bucket. Given an endless water supply, use the three gallon and five gallon buckets to fill the four gallon bucket, once you have exactly measured 4 gallons you are ready to transfer the water into the 4 gallon bucket. Your actions are limited to fill, transfer and empty.</p>
       <Buckets buckets={state.buckets} handleFill={handleFill} handleEmpty={handleEmpty} />
       <TransferForm handleSubmit={handleSubmit} />
     </>
