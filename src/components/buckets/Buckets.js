@@ -4,6 +4,7 @@ import Bucket from './Bucket';
 import styles from './Buckets.css';
 
 const Buckets = ({ buckets, handleFill, handleEmpty }) => {
+  console.log(bucketElements);
   const bucketElements = buckets.map(bucket => {
     if(bucket.capacity === 4) {
       return (

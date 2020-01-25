@@ -8,6 +8,9 @@ const EMPTY_BUCKET = 'EMPTY_BUCKET';
 const GET_BUCKETS = 'GET_BUCKETS';
 const TRANSFER_FROM = 'TRANSFER_FROM';
 const TRANSFER_TO = 'TRANSFER_TO';
+const COMPLETE_TRANSFER = 'COMPLETE_TRANSFER';
+let from;
+let to;
 
 function reducer(state, action) {
   switch(action.type) {
@@ -23,6 +26,50 @@ function reducer(state, action) {
       return { ...state, transferFrom: Number(action.payload) };
     case TRANSFER_TO:
       return { ...state, transferTo: Number(action.payload) };
+    case COMPLETE_TRANSFER:
+      return { ...state, buckets: state.buckets.map(bucket => {
+
+        if(bucket.capacity === state.transferFrom && bucket.current !== 4 && state.transferTo === 4) {
+          alert('PLEASE MAKE SURE YOU HAVE EXACTLY 4 GALLONS BEFORE FILLING');
+        }
+
+        if(state.transferFrom === state.transferTo) {
+          alert('CANNOT TRANSFER WATER BETWEEN THE SAME BUCKETS');
+        }
+
+        else if(bucket.capacity === state.transferFrom && bucket.current === 0) {
+          alert('CANNOT TRANSFER WATER FROM AN EMPTY BUCKET');
+        }
+
+        else if(bucket.capacity === state.transferTo && bucket.current === bucket.capacity) {
+          alert('BUCKET IS FULL, CANNOT TRANSFER MORE WATER INTO IT');
+        }
+
+
+        else {
+          for(let i = 0; i < state.buckets.length; i++) {
+            const currentBucket = state.buckets[i];
+            if(currentBucket.capacity === state.transferFrom) {
+              from = currentBucket;
+            }
+            else if(currentBucket.capacity === state.transferTo) {
+              to = currentBucket;
+              if(to.capacity > to.current) {
+                let fromRemainder;
+                let toRemainder;
+                if(from.current !== 4 && to.capacity === 4) {
+                  return currentBucket;
+                }
+                if(to.current === 0 && to.capacity > from.current) {
+                  to['current'] = from.current;
+                  from['current'] = 0;
+                }
+              }
+            }
+          }
+        }
+        return bucket;
+      }) };
     case GET_BUCKETS:
       return state;
   }
@@ -40,17 +87,18 @@ const Challenge = () => {
   });
 
   useEffect(() => {
-    console.log(state);
+    console.log(state, from, to);
   }, [state]);
 
   const handleSubmit = event => {
     event.preventDefault();
-    console.log(event);
+    dispatchState({
+      type: COMPLETE_TRANSFER
+    });
   };
 
   const handleChange = event => {
     event.preventDefault();
-    console.log(event);
     dispatchState({
       type: event.target.name,
       payload: event.target.value
